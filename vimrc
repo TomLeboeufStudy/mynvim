@@ -13,7 +13,10 @@ map ; :Files<CR>
 
 call plug#begin('~/.vim/plugged')
 " purify theme
-Plug 'kyoz/purify', { 'rtp': 'vim' }
+"Plug 'kyoz/purify', { 'rtp': 'vim' }
+
+" nerd tree
+Plug 'preservim/nerdtree'
 " nerd comment
 Plug 'preservim/nerdcommenter'
 " fuzzy finder
@@ -22,17 +25,34 @@ Plug 'junegunn/fzf.vim'
 " lightline
 Plug 'itchyny/lightline.vim'
 
+"Plug 'valloric/youcompleteme'
+
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-path'
 
 Plug 'wsdjeg/FlyGrep.vim'
+
+" gruvbox theme
+" Plug 'morhetz/gruvbox'
 Plug 'morhetz/gruvbox'
+" autoclose
+Plug 'townk/vim-autoclose'
+
+
+"solidity
+Plug 'tomlion/vim-solidity'
+" js
+Plug 'pangloss/vim-javascript'
+
 call plug#end()
 
 " enable ncm2 for all buffers
 autocmd BufEnter * call ncm2#enable_for_buffer()
+
+inoremap <expr> <Tab> pumvisible() ? "<C-n>" : "<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "<C-p>" : "<S-Tab>"
 
 " IMPORTANT: :help Ncm2PopupOpen for more information
 set completeopt=noinsert,menuone,noselect
