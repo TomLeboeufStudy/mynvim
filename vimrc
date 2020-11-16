@@ -66,4 +66,18 @@ set laststatus=2
 let g:lightline = {
       \ 'colorscheme': 'deus',
       \ }
+      
+:set scrolloff=5
+:set so=999
+:nnoremap j jzz
+:nnoremap k kzz
+":nnoremap G Gzz
+:nnoremap <Down> jzz
+:nnoremap <Up> kzz
+augroup VCenterCursor
+  au!
+  au BufEnter,WinEnter,WinNew,VimResized *,*.*
+        \ let &scrolloff=winheight(win_getid())/2
+augroup END
+au! VCenterCursor
 
