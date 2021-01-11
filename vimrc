@@ -66,7 +66,7 @@ set laststatus=2
 let g:lightline = {
       \ 'colorscheme': 'deus',
       \ }
-      
+
 :set scrolloff=5
 :set so=999
 :nnoremap j jzz
@@ -81,3 +81,7 @@ augroup VCenterCursor
 augroup END
 au! VCenterCursor
 
+let mapleader=","
+set timeout timeoutlen=1500
+
+tnoremap <Esc> <C-\><C-n>
